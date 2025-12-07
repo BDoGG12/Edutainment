@@ -10,7 +10,7 @@ import SwiftUI
 struct TimesTableSelectView: View {
     @State private var selectedNumber: Int = 2
     @State private var numOfQuestions: Int = 5
-    @State private var player = Player(selectedNumber: 1, numOfQuestions: 5, playerScore: 0)
+    @State private var player = Player(selectedNumber: 2, numOfQuestions: 5, playerScore: 0)
     
     var body: some View {
         NavigationStack {
