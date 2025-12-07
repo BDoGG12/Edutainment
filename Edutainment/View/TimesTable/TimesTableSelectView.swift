@@ -18,15 +18,7 @@ struct TimesTableSelectView: View {
             VStack {
                 // Times Table Selection
                 HStack {
-                    // Label for the Times Table Selection
-                    Text("Select a Times Table Number")
-                        .font(.headline.weight(.bold))
-                        .padding()
-                    Picker("Times Table Selection", selection: $selectedNumber) {
-                        ForEach(2...12, id: \.self) { number in
-                            Text("\(number)")
-                        }
-                    }
+                    TimesTableNumberView(label: "Select a Times Table Number", selectedNumber: $selectedNumber)
                     .onChange(of: selectedNumber) { newValue in
                         print(newValue)
                         self.player.selectedNumber = newValue
@@ -36,14 +28,7 @@ struct TimesTableSelectView: View {
                 
                 // Number of Questions Section
                 HStack {
-                    Text("Select Number of Questions")
-                        .font(.headline.weight(.bold))
-                        .padding()
-                    Picker("Number of Questions", selection: $numOfQuestions) {
-                        Text("5").tag(5)
-                        Text("10").tag(10)
-                        Text("20").tag(20)
-                    }
+                    NumOfQuestionsView(label: "Select Number of Questions", numOfQuestions: $numOfQuestions)
                     .onChange(of: numOfQuestions) { newValue in
                         self.player.numOfQuestions = newValue
                     }
